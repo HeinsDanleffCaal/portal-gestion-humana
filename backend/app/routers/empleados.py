@@ -47,6 +47,7 @@ def crear_empleado(
         fecha_ingreso=datos.fecha_ingreso,
         departamento_id=datos.departamento_id,
         rol=datos.rol,
+        dias_vacaciones_anuales=datos.dias_vacaciones_anuales,
     )
     db.add(nuevo)
     try:

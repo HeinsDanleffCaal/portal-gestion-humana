@@ -1,6 +1,6 @@
 import enum
 
-from sqlalchemy import Column, DateTime, Enum, ForeignKey, Integer, Numeric, String, func
+from sqlalchemy import Column, Date, DateTime, Enum, ForeignKey, Integer, Numeric, String, func
 from sqlalchemy.orm import relationship
 
 from app.database import Base
@@ -19,6 +19,7 @@ class BoletaPago(Base):
     id = Column(Integer, primary_key=True, index=True)
     empleado_id = Column(Integer, ForeignKey("empleados.id"), nullable=False, index=True)
     periodo = Column(String(7), nullable=False, index=True)  # formato AAAA-MM
+    fecha_pago = Column(Date, nullable=True)
 
     salario_base = Column(Numeric(10, 2), nullable=False)
     total_ingresos = Column(Numeric(10, 2), nullable=False, default=0)

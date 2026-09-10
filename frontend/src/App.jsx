@@ -7,6 +7,7 @@ import Boletas from './pages/Boletas'
 import Empleados from './pages/Empleados'
 import Login from './pages/Login'
 import Panel from './pages/Panel'
+import Vacaciones from './pages/Vacaciones'
 
 export default function App() {
   const { cargando } = useAuth()
@@ -50,6 +51,14 @@ export default function App() {
             element={
               <RutaProtegida>
                 <Boletas />
+              </RutaProtegida>
+            }
+          />
+          <Route
+            path="/vacaciones"
+            element={
+              <RutaProtegida>
+                <Vacaciones />
               </RutaProtegida>
             }
           />

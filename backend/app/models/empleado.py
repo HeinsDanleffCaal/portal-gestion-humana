@@ -35,9 +35,16 @@ class Empleado(Base):
     fecha_ingreso = Column(Date, nullable=False)
     activo = Column(Boolean, nullable=False, default=True)
     fecha_creacion = Column(DateTime(timezone=True), server_default=func.now())
+    dias_vacaciones_anuales = Column(Integer, nullable=False, default=15)
 
     departamento_id = Column(Integer, ForeignKey("departamentos.id"), nullable=False)
     departamento = relationship("Departamento", back_populates="empleados")
 
     asistencias = relationship("Asistencia", back_populates="empleado", cascade="all, delete-orphan")
     boletas = relationship("BoletaPago", back_populates="empleado", cascade="all, delete-orphan")
+    solicitudes_vacaciones = relationship(
+        "SolicitudVacaciones",
+        back_populates="empleado",
+        cascade="all, delete-orphan",
+        foreign_keys="SolicitudVacaciones.empleado_id",
+    )

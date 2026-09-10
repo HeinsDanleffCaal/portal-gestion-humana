@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date, datetime
 from decimal import Decimal
 from typing import List, Optional
 
@@ -16,6 +16,7 @@ class ConceptoIn(BaseModel):
 class BoletaGenerarIn(BaseModel):
     empleado_id: int
     periodo: str  # AAAA-MM
+    fecha_pago: Optional[date] = None
     conceptos: List[ConceptoIn] = []
 
     @field_validator("periodo")
@@ -41,6 +42,7 @@ class BoletaOut(BaseModel):
     id: int
     empleado_id: int
     periodo: str
+    fecha_pago: Optional[date] = None
     salario_base: Decimal
     total_ingresos: Decimal
     total_descuentos: Decimal

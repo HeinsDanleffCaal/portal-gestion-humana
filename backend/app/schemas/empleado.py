@@ -16,6 +16,7 @@ class EmpleadoBase(BaseModel):
     fecha_ingreso: date
     departamento_id: int
     rol: Rol = Rol.EMPLEADO
+    dias_vacaciones_anuales: int = 15
 
 
 class EmpleadoCrear(EmpleadoBase):
@@ -30,6 +31,7 @@ class EmpleadoActualizar(BaseModel):
     departamento_id: Optional[int] = None
     rol: Optional[Rol] = None
     activo: Optional[bool] = None
+    dias_vacaciones_anuales: Optional[int] = None
 
 
 class EmpleadoOut(BaseModel):
@@ -45,4 +47,5 @@ class EmpleadoOut(BaseModel):
     activo: bool
     rol: Rol
     departamento_id: int
+    dias_vacaciones_anuales: int
     fecha_creacion: Optional[datetime] = None

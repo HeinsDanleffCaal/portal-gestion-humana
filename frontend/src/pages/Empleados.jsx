@@ -14,6 +14,7 @@ const FORMULARIO_VACIO = {
   fecha_ingreso: '',
   departamento_id: '',
   rol: 'Empleado',
+  dias_vacaciones_anuales: '15',
 }
 
 export default function Empleados() {
@@ -74,6 +75,7 @@ export default function Empleados() {
         ...formulario,
         salario_base: Number(formulario.salario_base),
         departamento_id: Number(formulario.departamento_id),
+        dias_vacaciones_anuales: Number(formulario.dias_vacaciones_anuales) || 15,
       })
       setFormulario(FORMULARIO_VACIO)
       setMostrarFormulario(false)
@@ -215,6 +217,16 @@ export default function Empleados() {
               </select>
             </label>
           </div>
+
+          <label>
+            Días de vacaciones anuales
+            <input
+              type="number"
+              min="0"
+              value={formulario.dias_vacaciones_anuales}
+              onChange={(e) => actualizarCampo('dias_vacaciones_anuales', e.target.value)}
+            />
+          </label>
 
           <div className="formulario__departamento-nuevo">
             <input

@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import Base, engine
-from app.routers import asistencia, auth, boletas, departamentos, empleados
+from app.routers import asistencia, auth, boletas, departamentos, empleados, vacaciones
 
 # Crea las tablas si no existen (para un MVP; en un proyecto más grande esto
 # se manejaría con migraciones de Alembic).
@@ -27,6 +27,7 @@ app.include_router(empleados.router)
 app.include_router(departamentos.router)
 app.include_router(asistencia.router)
 app.include_router(boletas.router)
+app.include_router(vacaciones.router)
 
 
 @app.get("/api/salud", tags=["Sistema"])

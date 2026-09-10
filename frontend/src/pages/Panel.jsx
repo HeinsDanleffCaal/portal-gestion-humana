@@ -23,6 +23,11 @@ export default function Panel() {
           <p>Consulta tus boletas de pago generadas por periodo.</p>
         </Link>
 
+        <Link to="/vacaciones" className="tarjeta tarjeta-enlace">
+          <h2>Vacaciones</h2>
+          <p>Consulta tu saldo de días y solicita vacaciones.</p>
+        </Link>
+
         {esGestor && (
           <Link to="/empleados" className="tarjeta tarjeta-enlace">
             <h2>Empleados</h2>

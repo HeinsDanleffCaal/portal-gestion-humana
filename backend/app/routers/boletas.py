@@ -56,6 +56,7 @@ def generar_boleta(
     boleta = BoletaPago(
         empleado_id=empleado.id,
         periodo=datos.periodo,
+        fecha_pago=datos.fecha_pago,
         salario_base=empleado.salario_base,
         total_ingresos=total_ingresos,
         total_descuentos=total_descuentos,

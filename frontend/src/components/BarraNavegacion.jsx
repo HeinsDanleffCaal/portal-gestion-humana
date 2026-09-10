@@ -24,6 +24,7 @@ export default function BarraNavegacion() {
         {esGestor && <NavLink to="/empleados">Empleados</NavLink>}
         <NavLink to="/asistencia">Asistencia</NavLink>
         <NavLink to="/boletas">Boletas</NavLink>
+        <NavLink to="/vacaciones">Vacaciones</NavLink>
       </nav>
       <div className="barra-nav__usuario">
         <span>
