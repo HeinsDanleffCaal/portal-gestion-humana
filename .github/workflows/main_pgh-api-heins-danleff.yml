@@ -37,5 +37,4 @@ jobs:
         with:
           app-name: 'pgh-api-heins-danleff'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2AF43CE5BB804841B7D80EE0C9C055BA }}me: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2AF43CE5BB804841B7D80EE0C9C055BA }}
